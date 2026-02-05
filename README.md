@@ -1,7 +1,7 @@
 Power BI Business Analytics Portfolio
 
 Introduction
-This repository contains a portfolio of interactive Power BI dashboards built to solve strategic business problems. Each project demonstrates a full workflow: from data modeling and complex DAX calculations to interactive dashboard design and actionable insight generation.
+This repository contains a portfolio of interactive Power BI dashboards from a csv containing 1 million records, and is built to solve strategic business problems. Each project demonstrates a full workflow: from data modeling and complex DAX calculations to interactive dashboard design and actionable insight generation.
 
 The focus is on transforming raw data into clear, executive level narratives for finance, operations, and product strategy.
 
@@ -54,3 +54,14 @@ Technical Toolkit
     Data Modeling: Star schema design, relationship management, and optimization for performance
 
     Visualization: Custom interactive reports with bookmarks, tooltips, and drill-through pages
+    
+Data Source
+The analytical models and dashboards in this portfolio are built upon robust, publicly available datasets designed to simulate real-world business scenarios.
+
+The primary source for sales and transaction data is sample files provided by Excel BI Analytics for testing and demonstration purposes:
+
+    Source: https://excelbianalytics.com/downloads-18-sample-csv-files-data-sets-for-testing-sales/
+
+    Description: These datasets contain simulated sales records across multiple regions, product categories, and years, featuring realistic volumes and complexities suitable for building advanced business intelligence solutions.
+
+    Use in Portfolio: These files provided the foundation for developing the data models, advanced DAX measures, and interactive visualizations that demonstrate end-to-end analytics capability.
