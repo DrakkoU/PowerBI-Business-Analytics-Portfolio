@@ -1,7 +1,7 @@
 Power BI Business Analytics Portfolio
 
 Introduction
-This repository contains a portfolio of interactive Power BI dashboards from a csv containing 1 million records, and is built to solve strategic business problems. Each project demonstrates a full workflow: from data modeling and complex DAX calculations to interactive dashboard design and actionable insight generation.
+This repository contains a portfolio of interactive Power BI dashboards using data from a csv containing 1 million records, and is built to solve strategic business problems. Each project demonstrates a full workflow: from data modeling and complex DAX calculations to interactive dashboard design and actionable insight generation.
 
 The focus is on transforming raw data into clear, executive level narratives for finance, operations, and product strategy.
 
