@@ -1,59 +1,111 @@
 Product Performance and Profile - Power BI Dashboard
 
 Overview
-This single-page dashboard is an interactive diagnostic tool for analyzing the product portfolio. It connects high-level profit rankings with detailed trends, key market performance, and strategic unit economics for any product, enabling comprehensive strategic and operational reviews.
+This single page dashboard is an interactive diagnostic tool for analyzing product portfolios. It connects high level profit rankings with detailed trends, key market performance, and strategic unit economics for any product, enabling comprehensive strategic and operational insights.
 
 Business Questions Answered
-The dashboard is engineered to answer four critical business questions:
-1. What Is The Product Profit Growth Over Time?
-2. Which Items Are Producing The Most Profit?
-3. In Which Countries Are The Most Units Sold?
-4. What Are The Product's Efficiency and Strategic Profile?
+The dashboard is engineered to answer three critical business questions:
+
+    Which Items Are Producing The Most Profit?
+
+    Which Products Are The Most Efficient?
+
+    In Which Markets Are The Most Units Sold?
+
 
 Dashboard Features and Insights
-The dashboard integrates four coordinated visuals, all synchronized by a master product slicer:
+The dashboard integrates a coordinated set of visuals, controlled by master slicers for Year, Top 5 Highest Demand Markets (Countries), and Item Type.
 
-1. Product Profit Ranking (Clustered Column Chart)
-- Purpose: To identify the top and bottom contributors to overall profit at a glance.
-- Metric: Total Profit by Item Type.
-- Insight: Instantly answers "Which Items Are Producing The Most Profit?" (e.g., Cosmetics leads at ~63B, followed by Household at ~60B).
+1. Product Profit & Unit Economics (Clustered Column & Scatter Plot)
 
-2. Profitability Health Trend (Area Chart)
-- Purpose: To assess the stability and trajectory of a product's profit quality over time.
-- Metric: Profit Margin %` trend over the 7-year period.
-- Insight: Answers "What Is The Product's Profit Growth Over Time?" by showing whether a product's margin is improving, stable, or declining, indicating the sustainability of its profitability.
+    Question Answered: "Which Items Are Producing The Most Profit?"
 
-3. Key Market Analysis (Line Chart)
-- Purpose: To reveal the geographic markets that drive the highest sales volume for a selected product.
-- Metric: Total Units Sold for the Top 5 Countries.
-- Insight: Directly answers "In Which Countries Are The Most Units Sold?" for the selected item (e.g., Cosmetics top volume market is Greenland, Household's is Honduras).
+    Visuals:
 
-4. Strategic Profile (Scatter Plot)
-- Purpose: To diagnose the fundamental business model and efficiency of each product.
-- Metrics: Cost per Unit vs. Profit (or Margin per Unit), with bubble size representing Total Units Sold.
-- Insight: Answers "What Are The Product's Efficiency and Strategic Profile?" by classifying it as a high-cost premium item, a low-cost volume driver, or another archetype based on its position on the plot.
+        Clustered Column Chart: Displays Total Profit by Item Type.
+
+        Supporting Scatter Plot: Analyzes unit economics by plotting Cost per Unit vs. Revenue per Unit. Bubble size represents Total Revenue.
+
+    Insight: Combines high level profit comparison with a detailed view of underlying unit economics for each product.
+
+2. Unit Efficiency & Profile (Scatter Plot & Matrix)
+
+    Question Answered: "Which Products Are The Most Efficient?"
+
+    Visuals:
+
+        Strategic Efficiency Plot: Visually classifies products by comparing their cost burden to their profit generation, with an indicator of sales velocity. 
+	This reveals which products achieve high profits through superior margins versus lower costs.
+
+        Supporting Matrix: Provides Profit Efficiency Score of items.
+
+    Insight: Diagnoses the fundamental efficiency and strategic profile of each product by visualizing its cost structure and profitability.
+
+3. Key Market Volume Analysis (Line Chart)
+
+    Question Answered: "In Which Countries Are The Most Units Sold?"
+
+    Visual: Line Chart displays high demand markets.
+
+    Insight: Identifies the top geographic markets driving sales volume for the selected product.
 
 Interactive Workflow
-A master Item Type slicer controls the page. Selecting a product (e.g., "Cosmetics") filters the Area Chart, Line Chart, and Scatter Plot to display coordinated data exclusively for that item. The Clustered Column Chart provides the constant ranking context. This creates a seamless analytical path from general ranking to specific product diagnosis.
+Master slicers for Year, Country (Top 5 by Units Sold), and Item Type control the page. Visual interactions are engineered with specific constraints:
+
+    The Item Type slicer:
+
+	- Filters the Key Market Analysis and Unit Efficiency sections.
+
+	- Button Grid Slicer: Improves visual scan speed and selection clarity. selection color coding by item adds an immediate, intuitive layer 
+	  of categorical information that a standard slicer lacks.
+
+	- Integrating Scores on Buttons: This is a data-driven design choice. It surfaces a key metric (Item Efficiency Score) directly in the navigation, 
+	  eliminating the need for the user's eye to jump to a separate matrix. It turns the filter mechanism into an information display.
+
+    The Country slicer, populated by the Top 5 markets from the line chart, provides focused geographic filtering.
+
+    The Year slicer provides temporal control.
+
+    Selecting a product column or bubble will cross-filter other visuals to provide a coordinated, in depth diagnostic profile.
+
+Key Insights:
+
+    Meat operates on the thinnest margins, with a Cost to Revenue Ratio of 86.44%.
+
+    Clothes is the most profit efficient category, with a Profit to Revenue Ratio of 67.20%.
+
+    Cosmetics generates the highest total profit (63.4B), while the lowest producing is Fruits (880M).
+
+    Cosmetics contributes to 18.46% of total profit.
+
+    Total profit across the 12 product categories spans from 880M to 63.4B, indicating extreme variance in portfolio performance.
 
 Technical Implementation
-- Data Model: Built on a star schema with a central sales fact table connected to dimensions for Date, Product (Item Type), and Country.
-- Key DAX Measures: The analysis is powered by custom measures, including:
-    - `Total Profit`
-    - `Profit Margin %`
-    - `Cost per Unit`, `Margin per Unit`
-    - Market concentration logic for Top N countries.
-- Interactivity: Utilizes slicer-based filtering and visual interactions to ensure all diagnostic visuals respond to the selected product, providing a unified profile.
+
+    Data Model: 
+
+	Built on a robust, star schema data model, this dashboard utilizes advanced DAX calculations to deliver dynamic metrics for profitability, efficiency, and market analysis. 
+	The interactivity layer is engineered to ensure fast performance and intuitive drill down from strategic overviews to operational diagnostics.
+    
+    Interactivity: 
+	
+	Utilizes slicer based filtering and carefully managed visual interactions to ensure a cohesive analytical flow.
 
 Sample Insight: Analyzing a Top Performer
-Selecting "Cosmetics" reveals a complete strategic profile:
-- Scale: Confirmed as the #1 profit contributor (~63B).
-- Profit Health: The Profit Margin Area Chart shows whether this leading margin is stable or trending.
-- Key Market: The Line Chart identifies Greenland as its primary volume hub.
-- Strategic Profile: The Scatter Plot shows whether its high profit is driven by superior unit economics (high margin per unit) or sheer volume, defining its strategic category.
+Selecting "Cosmetics" from the Item Type slicer reveals:
 
-This workflow moves from a simple ranking to a deep understanding of why a product is successful and where its potential vulnerabilities or opportunities lie.
+    Profit Scale: Its bar in the column chart shows it generates the highest Total Profit (~63.4B).
+
+    Key Markets: The line chart highlights its top volume countries.
+
+    Efficiency Profile: The efficiency scatter plot positions it based on its Cost-to-Revenue and Profit-to-Revenue ratios.
+
+    Country Contribution: The country summary card displays a selected country's percentage contribution to Cosmetics' total profit and its efficiency rank within the Cosmetics market.
+
+This workflow moves from identifying top profit generators to diagnosing their market presence, unit economics, and operational efficiency.
 
 Files in This Folder
-- Product_Performance.pdf: Static PDF export of the dashboard.
-- screenshots/: Folder containing images demonstrating the interactive layout and the filtered views of specific products.
+
+    Product_Performance.pdf: Static PDF export of the dashboard.
+
+    screenshots/: Folder containing images demonstrating the interactive layout and the filtered views of specific products.
